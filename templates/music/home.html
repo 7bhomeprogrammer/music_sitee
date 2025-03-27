@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    <h1><strong>Добро пожаловать в музыкальный сайт!</strong></h1>
+    <ul>
+        <li><a href="{% url 'song_list' %}">Песни</a></li>
+        <li><a href="{% url 'artist_list' %}">Артисты</a></li>
+        <li><a href="{% url 'album_list' %}">Альбомы</a></li>
+        <li><a href="{% url 'playlist_list' %}">Плейлисты</a></li>
+    </ul>
+</body>
+</html>

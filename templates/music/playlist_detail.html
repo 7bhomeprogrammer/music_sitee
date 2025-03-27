@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/static/css/style.css">
+
+{% extends 'music/base.html' %}
+{% block content %}
+<h1>{{ playlist.name }}</h1>
+<ul>
+    {% for song in playlist.songs.all %}
+        <li><a href="{% url 'song_detail' song.id %}">{{ song.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

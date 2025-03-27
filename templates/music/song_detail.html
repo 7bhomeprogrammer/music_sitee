@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/static/css/style.css">
+
+{% extends 'music/base.html' %}
+{% block content %}
+<h1>{{ song.title }}</h1>
+<p>Artist: {{ song.artist.name }}</p>
+<audio controls>
+    <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+{% endblock %}

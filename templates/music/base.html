@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Site</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'song_list' %}">Songs</a> |
+            <a href="{% url 'artist_list' %}">Artists</a> |
+            <a href="{% url 'album_list' %}">Albums</a> |
+            <a href="{% url 'playlist_list' %}">Playlists</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Сайт Азатбека — слушайте песни с кайфом 🎶</p>
+    </footer>
+</body>
+</html>

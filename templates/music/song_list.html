@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список песен</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🎵 Список песен</h1>
+        <ul class="song-list">
+            {% for song in songs %}
+                <li>
+                    <div class="song-info">
+                        <strong>{{ song.title }}</strong> - {{ song.artist.name }}
+                    </div>
+                    {% if song.audio_file %}
+                        <audio controls class="audio-player">
+                            <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    {% else %}
+                        <p>Аудиофайл не найден</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
